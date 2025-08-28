@@ -1,0 +1,188 @@
+
+/* Margin Notes - Source: https://kennethfriedman.org/thoughts/2019/marginal-notes/ */
+aside, .aside { /* works for "aside" tag and class "aside" */
+  display: inline; /* prevents parent paragraph from breaking */
+  float: right; /* positions the note to the right of the content */
+  position: relative; /* forces note to be relative to its normal position */
+  width: 20vw; /* limits the width of the marginal note */
+  margin-right: -22vw; /* sets the distance away from the body text */
+  margin-top:.75vw;
+  font-size: 8pt; /* makes font slightly smaller */
+  text-indent:0.1in;
+  text-align:left;
+}
+
+span.aside p {
+  text-indent:0.2in;
+}
+
+body {
+  max-width: 500px; /* provides maximum, in case screen is huge */
+  width: 60%; /* keeps body text width reasonable */
+  margin: 0 auto; /* centers body on page */
+  font-family: 'Times New Roman', Times, serif;
+  text-align: justify;
+}
+
+button {
+  position: sticky;
+  top: 0in;
+}
+
+cite {
+  font-style: normal;
+}
+
+/* overrides default italicized text for defined terms; makes it normal */
+dfn {
+  font-style: normal;
+}
+
+
+
+/* DIFFS */
+body.StatutoryCodification ins {
+  background-color: white;
+  text-decoration: none;
+}
+body.StatutoryCodification del {
+  display: none;
+  background-color: pink;
+  text-decoration: line-through;
+}
+.moved-from {
+  text-decoration-style: double;
+  text-decoration-line: line-through;
+  background-color: #FCFBB7;
+}
+.moved-to {
+  text-decoration-style: double;
+  text-decoration-line: underline;
+  background-color: #FCFBB7;
+}
+
+body.StatutoryCodification > header > p.version-number,
+body.StatutoryCodification > header > p.amended-through,
+body.StatutoryCodification > header > p.effective-date,
+body.StatutoryCodification > header > p.operative-date,
+body.StatutoryCodification > header > p.buttons {
+  text-align: center;
+}
+body.StatutoryCodification > header > p.version-number::before,
+body.StatutoryCodification > header > p.amended-through::before,
+body.StatutoryCodification > header > p.effective-date::before,
+body.StatutoryCodification > header > p.operative-date::before {
+  content: "[";
+}
+body.StatutoryCodification > header > p.version-number::after,
+body.StatutoryCodification > header > p.amended-through::after,
+body.StatutoryCodification > header > p.effective-date::after,
+body.StatutoryCodification > header > p.operative-date::after {
+  content: "]";
+}
+body.StatutoryCodification > main p:not([id*="_flushtext"]) {
+  text-indent: 0.25in;
+  hyphens: auto;
+}
+
+p[id$="_flushtext"] {
+  text-indent:0.0in;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  font-size: 12pt;
+}
+
+nav ul,
+nav ol {
+  display: inline-block;
+  list-style-type: none;
+  padding-left: 0in;
+}
+nav li {
+  display: inline-block;
+}
+
+p.chapeau {
+  text-indent: 0.25in;
+}
+
+p.printRef {
+  text-align: center;
+}
+p.printRef::before {
+  content: "[";
+}
+p.printRef::after {
+  content: "]";
+}
+
+details[id="context"] > summary,
+details[id="cited-by"] > summary {
+  font-style:italic;
+}
+details[id="context"] ul,
+details[id="cited-by"] ul {
+  list-style:none;
+  font-size:10pt;
+}
+
+/*
+  Source, Cross-references, Annotations, Operative dates, etc.
+*/
+
+section > div[id$="_heading"] > h1 > span.designator-value::after {
+  content: ".";
+}
+
+div[id$="_source"] > details > summary, 
+div[id$="_xrefs"] > details > summary,
+div[id$="_decisions"] > details > summary, 
+div[id$="_annotations"] > details > summary,
+div[id$="_operative-date"] > details > summary,
+div[id$="_cases"] > details > summary,
+div[id$="_editorial-notes"] > details > summary {
+  font-style:italic;
+}
+
+div[id$="_source"] > details > p, 
+div[id$="_xrefs"] > details > p,
+div[id$="_decisions"] > details > p,
+div[id$="_annotations"] > details > p,
+div[id$="_operative-date"] > details > p,
+div[id$="_cases"] > details > p,
+div[id$="_editorial-notes"] > details > p {
+  font-size: 10pt;
+  margin-left: 0.25in;
+  margin-right: 0.25in;
+  text-indent: 0.15in;
+}
+
+div[id$="_editorial-notes"] > details > p > span.designator-value {
+  font-weight:bold;
+}
+
+
+
+.starPage {
+  font-weight:bold;
+}
+.starPage::before {
+  content: "\002A";
+}
+
+sup {
+  font-size: 10pt;
+}
+
+
+/* TABLE */
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+td {
+  vertical-align: top;
+}
