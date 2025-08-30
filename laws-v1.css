@@ -49,7 +49,7 @@ details > p {
 }
 
 dfn {
-  font-family: Century-Expanded-Regular;
+  font-family: "Century-Expanded-Regular";
   font-style: normal;
 }
 
@@ -102,7 +102,7 @@ body.StatutoryCodification del {
   font-family:"Century-Expanded-Bold";
 }
 
-body.LegislativeBill > main > section > div > p > span.designator-value::after {
+body.LegislativeBill > main > section > div > p:first-child > span.designator-value::after {
   content: ".";
 }
 
@@ -152,7 +152,7 @@ body.LegislativeBill > header.era0 > p.billDescription { /* Old session laws con
 /* Identifies the Legislative Bill Number */
 /* Formerly .lb */
 body.LegislativeBill > header.era0 > p.billNumber {
-  font-family: Century-Expanded-Bold;
+  font-family: "Century-Expanded-Bold";
   text-transform: none;
   text-align: center;
 }
@@ -171,12 +171,12 @@ body.LegislativeBill > header.era0 > p.billTitle {
 
 /* era0 <main> */
 body.LegislativeBill > main.era0 > p.enactingFormula {
-  font-family: Century-Expanded-Italic;
+  font-family: "Century-Expanded-Italic";
 }
 
 /* era1 <header> */
 body.LegislativeBill > header.era1 > p.billNumber {
-  font-family: Century-Expanded-Bold;
+  font-family: "Century-Expanded-Bold";
   text-transform: uppercase;
   text-align: center;
 }
@@ -202,7 +202,7 @@ body.LegislativeBill > header.era1 > p.billTitle > cite {
 /* era1 <main> */
 
 body.LegislativeBill > main.era1 > p.enactingFormula {
-  font-family: Century-Expanded-Regular;
+  font-family: "Century-Expanded-Regular";
 }
 
 body.StatutoryCodification > header > p.version-number,
@@ -231,6 +231,7 @@ cite {
 
 h1, h2, h3, h4, h5, h6 {
   display: block;
+  font-style:normal;
   font-family: Century-Expanded-Bold;
   font-size: 12pt;
 }
@@ -259,12 +260,12 @@ p.printRef::after {
   content: "]";
 }
 
-section > h1 > span.designator::after {
+section > div[id$="_heading"] > h1 > span.designator-value::after {
   content: ".";
 }
 
 .starPage {
-  font-family: Century-Expanded-Bold;
+  font-family: "Century-Expanded-Bold";
 }
 .starPage::before {
   content: "\002A";

@@ -1,0 +1,82 @@
+
+
+body {
+  quotes:initial;
+}
+
+blockquote {
+  padding-left: 0.25in;
+  padding-right: 0.25in;
+}
+
+blockquote p {
+  margin: 0 0;
+}
+
+blockquote p.first-line-indent {
+  text-indent: 0.25in;
+}
+
+h1 {
+  text-transform:uppercase;
+}
+
+h2 {
+  text-transform:uppercase;
+  font-family:helvetica;
+  font-size:14pt;
+}
+
+p {
+  font-size: 12pt;
+}
+
+ul {
+  list-style:none;
+}
+
+.note {
+  font-size:10pt;
+}
+
+.printedPage {
+  font-weight:bold;
+  background-color:aquamarine;
+}
+.printedPage::before {
+  content:"[*"
+}
+.printedPage::after {
+  content:"]"
+}
+
+.repealed {
+  background-color:pink;
+}
+
+
+/* TABLE */
+table, th, td {
+  border: 1px solid black;
+  border-collapse:collapse;
+}
+
+td, th {
+  padding-left:5px;
+  padding-right:5px;
+}
+
+caption {
+  caption-side: top;
+  font-weight:bold;
+  padding:10px;
+  text-transform:uppercase;
+}
+
+table {
+  /* table-layout: fixed; */
+  width: 100%;
+}
+td {
+  vertical-align: top;
+}

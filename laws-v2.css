@@ -1,0 +1,160 @@
+@font-face {
+  font-family: "Century-Expanded-Regular";
+  src: local("Century-Expanded-Regular"),
+    url("fonts/century-expanded-regular.otf")
+}
+
+@font-face {
+  font-family: "Century-Expanded-Italic";
+  src: local("Century-Expanded-Italic"),
+    url("fonts/century-expanded-italic.otf")
+}
+
+@font-face {
+  font-family: "Century-Expanded-Bold";
+  src: url("fonts/century-expanded-bold.otf")
+}
+
+
+/* GENERAL BODY LAYOUT */
+body {
+  max-width: 500px;  /* provides maximum, in case screen is huge */
+  width: 60%;  /* keeps body text width reasonable */
+  margin: 0 auto;  /* centers body on page */
+  font-family: "Century-Expanded-Regular";
+  text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 12pt;
+  font-weight:400;
+  font-family:"Century-Expanded-Bold";
+  text-indent:0.25in;
+}
+
+h1 > span.designator-value::after {
+  content:".";
+}
+
+/* DIFFS */
+
+body.LegislativeBill ins {
+  background-color: #a0ffa0;
+  text-decoration: underline;
+}
+
+body.LegislativeBill del {
+  background-color: pink;
+  text-decoration: line-through;
+}
+
+body.LegislativeBill .moved-from {
+  text-decoration-style: double;
+  text-decoration-line: line-through;
+  background-color: #FCFBB7;
+}
+
+body.LegislativeBill .moved-to {
+  text-decoration-style: double;
+  text-decoration-line: underline;
+  background-color: #FCFBB7;
+}
+
+
+
+/* HEADERS */
+
+/* era0 -- 1881 laws  */
+
+p.printRef {
+  text-align:center;
+}
+
+p.printRef::before {
+  content:"[";
+}
+
+p.printRef::after {
+  content:"]";
+}
+
+header.era0 > p.chapter,
+header.era0 > p.billDescription {
+  text-align:center;
+  text-transform:uppercase;
+}
+
+header.era0 > p.billNumber {
+  font-family:"Century-Expanded-Bold";
+  text-align:center;
+}
+
+header.era0 > p.introducedBy {
+  text-transform:uppercase;
+  padding-left: 0.25in;
+  text-indent: -0.25in;
+}
+
+header.era0 > p.billTitle {
+  padding-left: 0.25in;
+  text-indent: -0.25in;
+}
+
+/* MAIN */
+
+dfn {
+  font-family: "Century-Expanded-Regular";
+  font-style: normal;
+}
+
+section[id^="s"] {
+  display:block;
+}
+
+div[id$="_codified"] > p {
+  text-indent:0in;
+  font-family:"Century-Expanded-Bold";
+  font-size:11pt;
+  text-align:right;
+}
+
+div[id$="_codified"] > p::before {
+  content:"[";
+}
+
+div[id$="_codified"] > p::after {
+  content:"]";
+}
+
+
+/* era0 */
+
+p.enactingFormula {
+  font-family:"Century-Expanded-Italic";
+}
+
+[id$="_heading"], [id$="_stat_content"] {
+  display: inline;
+}
+
+[id$="_heading"] > h1,
+[id$="_stat_content"] p:nth-child(1) {
+  display:inline;
+  margin: 0; /* Removes default paragraph margins */
+  padding: 0; /* Removes any padding */
+}
+
+[id$="_heading"] > h1 {
+  display:inline-block;
+  text-indent:0.25in;
+}
+
+[id$="_stat_content"] p:not(:nth-child(1)) {
+  text-indent:0.25in;
+  display:block;
+}
+
+main.era0 > p.approved {
+  text-indent:0.25in;
+}
+
