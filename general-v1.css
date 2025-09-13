@@ -46,8 +46,9 @@ h1 {
 }
 
 h2 {
-  text-transform:uppercase;
-  font-family:helvetica;
+  font-variant:small-caps;
+  font-weight:400;
+  font-family:"Century-Expanded-Bold";
   font-size:14pt;
 }
 
@@ -112,4 +113,8 @@ table {
 }
 td {
   vertical-align: top;
+}
+th {
+  font-weight:400;
+  font-family:"Century-Expanded-Bold";
 }
