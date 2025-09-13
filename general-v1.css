@@ -1,7 +1,23 @@
+@font-face {
+  font-family: "Century-Expanded-Regular";
+  src: local("Century-Expanded-Regular"),
+    url("fonts/century-expanded-regular.otf")
+}
 
+@font-face {
+  font-family: "Century-Expanded-Italic";
+  src: local("Century-Expanded-Italic"),
+    url("fonts/century-expanded-italic.otf")
+}
+
+@font-face {
+  font-family: "Century-Expanded-Bold";
+  src: url("fonts/century-expanded-bold.otf")
+}
 
 body {
   quotes:initial;
+  font-family:"Century-Expanded-Regular";
 }
 
 blockquote {
@@ -17,8 +33,16 @@ blockquote p.first-line-indent {
   text-indent: 0.25in;
 }
 
+cite {
+  font-style:normal;
+}
+
+
+
 h1 {
   text-transform:uppercase;
+  font-weight:400;
+  font-family:"Century-Expanded-Bold";
 }
 
 h2 {
@@ -27,8 +51,17 @@ h2 {
   font-size:14pt;
 }
 
+i, em {
+  font-style:normal;
+  font-family:"Century-Expanded-Italic";
+}
+
 p {
   font-size: 12pt;
+  text-indent:0.25in;
+}
+p.flushtext {
+  text-indent:0.0in;
 }
 
 ul {

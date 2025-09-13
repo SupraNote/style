@@ -1,3 +1,20 @@
+@font-face {
+  font-family: "Century-Expanded-Regular";
+  src: local("Century-Expanded-Regular"),
+    url("fonts/century-expanded-regular.otf")
+}
+
+@font-face {
+  font-family: "Century-Expanded-Italic";
+  src: local("Century-Expanded-Italic"),
+    url("fonts/century-expanded-italic.otf")
+}
+
+@font-face {
+  font-family: "Century-Expanded-Bold";
+  src: url("fonts/century-expanded-bold.otf")
+}
+
 
 /* Margin Notes - Source: https://kennethfriedman.org/thoughts/2019/marginal-notes/ */
 aside, .aside { /* works for "aside" tag and class "aside" */
@@ -63,6 +80,7 @@ body.StatutoryCodification del {
 
 body.StatutoryCodification > header > p.version-number,
 body.StatutoryCodification > header > p.amended-through,
+body.StatutoryCodification > header > p.approved-date,
 body.StatutoryCodification > header > p.effective-date,
 body.StatutoryCodification > header > p.operative-date,
 body.StatutoryCodification > header > p.buttons {
@@ -70,12 +88,14 @@ body.StatutoryCodification > header > p.buttons {
 }
 body.StatutoryCodification > header > p.version-number::before,
 body.StatutoryCodification > header > p.amended-through::before,
+body.StatutoryCodification > header > p.approved-date::before,
 body.StatutoryCodification > header > p.effective-date::before,
 body.StatutoryCodification > header > p.operative-date::before {
   content: "[";
 }
 body.StatutoryCodification > header > p.version-number::after,
 body.StatutoryCodification > header > p.amended-through::after,
+body.StatutoryCodification > header > p.approved-date::after,
 body.StatutoryCodification > header > p.effective-date::after,
 body.StatutoryCodification > header > p.operative-date::after {
   content: "]";

@@ -16,6 +16,16 @@
 }
 
 
+/* Margin Notes - Source: https://kennethfriedman.org/thoughts/2019/marginal-notes/ */
+aside, .aside { /* works for "aside" tage and class "aside" */
+  display: inline; /* prevents parent paragraph from breaking */
+  float: right; /* positions the note to the right of the content */
+  position: relative; /* forces note to be relative to its normal position */
+  width: 20vw; /* limits the width of the marginal note */
+  margin-right: -22vw; /* sets the distance away from the body text */
+  font-size: 8pt; /* makes font slightly smaller */
+}
+
 /* GENERAL BODY LAYOUT */
 body {
   max-width: 500px;  /* provides maximum, in case screen is huge */
@@ -25,11 +35,21 @@ body {
   text-align: justify;
 }
 
+cite {
+  font-style:normal;
+  font-family:"Century-Expanded-Regular";
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-size: 12pt;
   font-weight:400;
   font-family:"Century-Expanded-Bold";
   text-indent:0.25in;
+}
+
+i, em {
+  font-style:normal;
+  font-family:"Century-Expanded-Italic";
 }
 
 h1 > span.designator-value::after {
@@ -100,6 +120,32 @@ header.era0 > p.billTitle {
   text-indent: -0.25in;
 }
 
+/* era1 */
+
+body.LegislativeBill > header.era1 > p.billNumber {
+  font-family: "Century-Expanded-Bold";
+  text-transform: uppercase;
+  text-align: center;
+}
+body.LegislativeBill > header.era1 > p.approved {
+  text-align: center;
+}
+body.LegislativeBill > header.era1 > p.approved::before {
+  content:"";
+}
+
+body.LegislativeBill > header.era1 > p.introducedBy {
+  padding-left: 0.25in;
+  text-indent: -0.25in;
+}
+body.LegislativeBill > header.era1 > p.billTitle {
+  padding-left: 0.25in;
+  text-indent: -0.25in;
+}
+body.LegislativeBill > header.era1 > p.billTitle > cite {
+  text-wrap: nowrap;
+}
+
 /* MAIN */
 
 dfn {
@@ -123,14 +169,27 @@ div[id$="_codified"] > p::before {
 }
 
 div[id$="_codified"] > p::after {
-  content:"]";
+  content:".]";
 }
 
 
 /* era0 */
 
-p.enactingFormula {
+main.era0 > p.enactingFormula {
   font-family:"Century-Expanded-Italic";
+}
+
+[id$="_chapeau"] > p {
+  text-indent:0.25in;
+}
+
+[id$="_chapeau"] > p > span.designator-label,
+[id$="_chapeau"] > p > span.designator-value {
+  font-family:"Century-Expanded-Bold";
+}
+
+[id$="_chapeau"] > p .designator-value::after {
+  content:"."
 }
 
 [id$="_heading"], [id$="_stat_content"] {
